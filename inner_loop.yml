@@ -1,0 +1,12 @@
+ - name: Find items containing "{{ svc_name }}"
+   community.docker.docker_container:
+     name: "{{ inner_item }}"
+     state: absent
+     force_kill: true
+#   debug:
+#     msg: "Found: {{ svc_name }} in {{ inner_item }} "
+   when: inner_item is search(svc_name)
+#   loop: "{{ docker_ps.stdout_lines | select('search', 'svc_name') | list }}"
+   loop: "{{ docker_ps.stdout_lines }}"
+   loop_control:
+     loop_var: inner_item

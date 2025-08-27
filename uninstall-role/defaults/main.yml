@@ -1,0 +1,39 @@
+ #SPDX-License-Identifier: MIT-0
+---
+# defaults file for uninstall
+
+service_names:
+ - alertmanager
+ - core-bootstrap
+ - datamapper-designer
+ - datamapper-engine
+ - appname-backend
+ - appname-configuration
+ - appname-core
+ - appname-front
+ - appname-state-collector
+ - grafana
+ - kong
+ - loki
+ - node_exporter
+ - state-collector
+ - tempo
+ - vmalert
+ - vmsingle
+ - postgres
+ - nginx
+
+dir_list:
+ - /opt/backend
+ - /opt/conf-serv
+ - /opt/core
+ - /opt/datamapper
+ - /opt/front
+ - /opt/grafana-alloy
+ - /opt/app2
+ - /opt/vm-stack
+ - /opt/node_exporter
+ - /opt/state-collector
+ - /opt/postgresql
+ - /opt/nginx
+

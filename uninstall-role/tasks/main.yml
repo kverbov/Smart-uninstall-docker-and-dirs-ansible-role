@@ -1,0 +1,25 @@
+ - name: Execute docker ps command
+   command: docker ps --format "{{ '{{.Names}}' }}"
+   register: docker_ps
+
+ - name: Show running containers
+   debug:
+     var: docker_ps.stdout_lines
+
+ - name: Kill only containers with names from the list
+   include_tasks: inner_loop.yml
+   vars:
+     svc_name: "{{ item }}"
+#   debug:
+#      msg: "Current container  {{ item }}"
+   loop: "{{ service_names }}"
+
+ - name: Delete Dirs
+   file:
+     path: "{{ item }}"
+     state: absent
+     mode: '0777'
+     owner: 1000
+     group: 1000
+   loop: "{{ dir_list }}"
+
