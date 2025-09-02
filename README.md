@@ -1,1 +1,2 @@
-Using ansible double loop (inner and outer) for searching containers and directorise by kjeywords, and deleting them 
+Using ansible double loop (inner and outer) for searching containers and directorise by keywords, and deleting them 
+
